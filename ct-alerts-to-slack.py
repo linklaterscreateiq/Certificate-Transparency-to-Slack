@@ -164,7 +164,7 @@ def query_certspotter_api(domain, certificate_id):
         return None
 
 
-def main():
+def main(event, context):
     # startup check on required env vars
     log.info("Starting up cert monitor...")
     if not (S3_BUCKET or FILESYSTEM_PATH):
@@ -234,4 +234,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(None, None)
